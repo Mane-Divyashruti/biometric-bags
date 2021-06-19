@@ -1,27 +1,43 @@
-<form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
-  <mat-form-field>
-    <mat-label>First name</mat-label>
-    <input matInput placeholder="Ex. Jon" formControlName="name" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Email</mat-label>
-    <input matInput placeholder="Ex. Jon" formControlName="email" />
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Password</mat-label>
-    <input
-      matInput
-      type="password"
-      placeholder="Ex. Jon"
-      formControlName="password"
-    />
-  </mat-form-field>
-  <button
-    color="accent"
-    [disabled]="!signupForm.valid"
-    mat-raised-button
-    type="submit"
-  >
-    <span>Sign up</span>
-  </button>
-</form>
+<div class="border">
+  <h2>Sign Up!</h2>
+  <form [formGroup]="signupForm" (ngSubmit)="signup()" novalidate>
+    <mat-form-field [style.width.px]=500>
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Ex. Jon" formControlName="name" />
+    </mat-form-field>
+    <br>
+    <mat-form-field [style.width.px]=500>
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Ex. Jon" formControlName="email" />
+    </mat-form-field>
+    <br>
+    <mat-form-field [style.width.px]=500>
+      <mat-label>Mobile no</mat-label>
+      <input matInput placeholder="" formControlName="mobile" />
+    </mat-form-field>
+    <br>
+    <mat-form-field [style.width.px]=500>
+      <mat-label>Alternate Mobile no</mat-label>
+      <input matInput placeholder="" formControlName="alternatemobile" />
+    </mat-form-field>
+    <br>
+    <mat-form-field [style.width.px]=500>
+      <mat-label>Unique Bag ID</mat-label>
+      <input matInput placeholder="Ex. Jon" formControlName="bagid" />
+    </mat-form-field>
+    <br>
+    <mat-form-field [style.width.px]=500>
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <input matInput type="password" placeholder="Ex. Jon" formControlName="password" />
+    </mat-form-field>
+    <br>
+    <button id="submit" [disabled]="!signupForm.valid" mat-raised-button type="submit">
+      <span>Sign up</span>
+    </button>
+  </form>
+</div>

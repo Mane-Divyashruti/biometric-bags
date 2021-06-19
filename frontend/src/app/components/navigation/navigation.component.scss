@@ -1,8 +1,10 @@
 mat-toolbar {
+  background-color: #e2a538;
   display: flex;
   justify-content: space-between;
   padding: 0 64px;
   a {
+    color:#52575d;
     text-decoration: none;
     &.active-link {
       color: white;

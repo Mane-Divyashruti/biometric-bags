@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "posts"
+  "defaultProject": "posts",
+  "cli": {
+    "analytics": false
+  }
 }
